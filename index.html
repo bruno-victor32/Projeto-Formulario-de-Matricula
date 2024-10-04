@@ -23,6 +23,47 @@
 
         <h1>Formulário de matrícula</h1>
         <p>Preencha os dados abaixo para matricular seu filho na escola de educação infantil Estrela do Amanhã.</p>
+
+        <form method="post" enctype="multipart/form-data"><!--Se tiver um input do tipo file tem que colocar o enctype do tipo multipart/form-data -->
+          <fieldset class="child-info">
+            <legend>Informações da criança</legend>
+            
+            <!--É recomendado sempre ter o "name"-->
+            <div class="input-wrapper">
+              <label for="fullname">Nome completo</label>
+              <input type="text" id="fullname" name="fullname" placeholder="Qual o nome da criança"><!--Devido colocar o mesmo id do label, quando eu clicar em Nome será automaticamente selecionado o input-->
+            </div>
+
+            <div class="input-wrapper">
+              <label for="birth">Data de Nascimento</label>
+              <input type="date" id="birth" name="birth" lang="pt-BR"><!--lang serve para deixar no formato português-->
+            </div>
+
+            <div class="select-wrapper">
+              <label for="gender">Sexo</label>
+              <select name="gender" id="gender">
+                <option value="female">Feminino</option>
+                <option value="male">Masculino</option>
+                <option value="na">Prefiro não responder</option>
+              </select>
+            </div>
+
+            <div class="textarea-wrapper"><!--Tradução wrapper e embrulhar algo-->
+              <label for="medical-info">Informações médicas</label>
+              <textarea name="medical-info" id="medical-info" cols="30" rows="10" placeholder="A criança possui alguma condição médica que a escola deve estar ciente? (Se sim, especifique)"></textarea>
+            </div>
+
+            <div class="droparea-wrapper"> <!--droparea-wrapper significa soltar um arquivo-->
+              <input type="file" name="birth-file" id="birth-file">
+              <img src="assets/icons/cloud-upload.svg" alt="Ícone de upload">
+              <p>
+                Clique aqui para <br>
+                Selecionar os arquivos
+              </p>
+            </div>
+
+          </fieldset>
+        </form>
       </div>
     </main>
 
