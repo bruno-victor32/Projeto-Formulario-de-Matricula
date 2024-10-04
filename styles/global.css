@@ -1,7 +1,7 @@
 *{
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box;/*Cálculos de caixas vai ficar mais facil*/
 }
 
 :root{
@@ -41,5 +41,5 @@
 }
 
 body {
-
+  overflow: hidden;/*Utilizando isso não permite ter rolagem*/
 }

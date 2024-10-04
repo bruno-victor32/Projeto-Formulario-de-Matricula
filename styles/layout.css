@@ -1,0 +1,33 @@
+/*Colocamos 51.25% e 48.75% devido essa situação
+Largura de uma coluna 656px e da outra coluna é 624px totalizando 1280px.Vamos fazer o seguinte calculo:
+(654 x 100) / 1280 = 51,25 de um lado */
+#app{
+  display: grid;
+  grid-template-columns: 51.25% 48.75%; /*Deixando duas colunas*/
+
+  height: 100vh; /*Altura fixa. vh é toda parte visivel da tela*/
+  overflow: hidden;/*Utilizando isso não permite ter rolagem*/
+}
+
+main{
+  overflow: auto;/*Dessa forma permite a rolagem da página*/
+  padding: 4rem; /*O calculo do rem é 64px / 16px = 4rem, esse 64px está no figma*/
+
+  & .main-container{
+    max-width: 33rem; /*O calculo do rem é 528px / 16px = 33rem, esse 528px está no figma é o 16px é devido ser a fonte padrão do navegador*/
+    margin: auto;
+
+  }
+}
+
+aside{
+  background-color: var(--surface-secondary);
+  padding: 4rem;/*O calculo do rem é 64px / 16px = 4rem, esse 64px está no figma*/
+
+  & .aside-container{
+    max-width: 41rem ;/*O calculo do rem é 656px / 16px = 41rem, esse 41px está no figma é o 16px é devido ser a font padrão do navegador*/
+  }
+}
+
+
+
