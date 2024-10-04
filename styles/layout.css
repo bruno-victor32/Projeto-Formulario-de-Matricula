@@ -16,7 +16,18 @@ main{
   & .main-container{
     max-width: 33rem; /*O calculo do rem é 528px / 16px = 33rem, esse 528px está no figma é o 16px é devido ser a fonte padrão do navegador*/
     margin: auto;
+  }
 
+  & .back{
+    display: flex;/*Para ficar um ao lado do outro*/
+    align-items: center;
+    gap: .5rem; /*Espaçamento entre o ícone é a palavra "Voltar"*/
+    margin-bottom: 1.5rem;
+  }
+
+  & h1{
+    font: 600 1.5rem/1.25 var(--font-family);/*Essa fonte não tinha no figma, ela é semibold*/
+    margin-bottom: 0.5rem;
   }
 }
 
@@ -24,9 +35,23 @@ aside{
   background-color: var(--surface-secondary);
   padding: 4rem;/*O calculo do rem é 64px / 16px = 4rem, esse 64px está no figma*/
 
+  /*& está se referindo ao aside que está acima*/
   & .aside-container{
     max-width: 41rem ;/*O calculo do rem é 656px / 16px = 41rem, esse 41px está no figma é o 16px é devido ser a font padrão do navegador*/
+
+    & > img{/*Primeiro nível de imagem do aside-container é a segunda imagem*/
+      margin-top: 2rem;
+    }
   }
+
+  & h2{
+    font: 600 2.5rem/1.25 var(--font-family);/*Essa fonte não tinha no figma, ela é semibold*/
+    margin-bottom: 0.5rem;
+    & span{
+      color: var(--text-highlight);
+    }
+  }
+
 }
 
 
