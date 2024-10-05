@@ -1,0 +1,39 @@
+/*Arrumando aonde devemos fazer upload do arquivo*/
+.dropzone {
+  border: 1px dashed var(--stroke-default);
+  border-radius: 0.25rem;
+
+  display: grid;
+  justify-items: center; /*Deixando o "Clique aqui para selecionar os arquivos" e o ícone centralizado*/
+  gap: .5rem;/*Espaçamento entre a frase "Clique aqui para..."  é o Ícone*/
+  text-align: center;/*Centralizando o texto*/
+  padding: 1.75rem 1rem; /*1.75rem embaixo e em cima e 1rem nas laterais*/
+
+  position: relative;
+  & input{
+    position:absolute; /*Será absoluto dentro do "dropzone"*/
+    width: 100%;/*Largura de 100%*/
+    height: 100%;
+    inset: 0;/*Deixando alinhado no top, o botão de upload*/
+    opacity: 0;/*Deixando o botão de upload invisível*/
+  }
+
+  & p {
+    color: #A8A29E;
+  }
+
+  /*Quando passar o mouse em cima*/
+  &:hover, &:has(input:focus){/*has vai verificar se meu input está em foco e se tiver vai aplicar*/
+    border-width: 2px;/*A bora irá aumentar */
+    border-color: var(--stroke-highlight); /*A borda vai mudar de cor */
+    background-color: var(--surface-secondary);/*A cor de fundo vai mudar tbm*/
+  
+    & p{
+      color: var(--text-textiary);/*A cor do texto tbm vai mudar*/
+    }
+
+    & svg path{/*Estou pegando o svg que está direto no html e em seguida o path*/
+      stroke: var(--stroke-highlight) ;/*Linhas do SVG, vou mudar a cor*/
+    }
+  }
+}

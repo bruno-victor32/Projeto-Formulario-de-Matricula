@@ -5,7 +5,7 @@ form{
 }
 
 fieldset{
-  border:nome;/*Retirando a borda do fieldset*/
+  border:none;/*Retirando a borda do fieldset*/
   
   display:grid;
   gap: 1.5rem;/*Espaçamento entre os elementos que estão dentro do fieldset*/

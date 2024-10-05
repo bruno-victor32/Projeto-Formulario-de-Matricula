@@ -1,3 +1,5 @@
+@import url(droparea.css);
+
 /*Vamos manter uns padrões de campos. Fields significa campos*/
 
 input, textarea, select {
@@ -20,7 +22,8 @@ label{
 /*Todo o input, select que eu tocar nele vai ter uma cor diferente da cor padrão do navegador */
 input:focus,
 select:focus,
-textarea:focus{
+textarea:focus,
+input[type="date"]:focus-within{ /*Se algum elemento do input "date" está em foco, então ele vai aplicar tudo isso*/
   outline: .25rem solid var(--surface-secondary); 
   border: .125rem solid var(--stroke-highlight); /*Terá uma borda vermelha os campos quando clicar*/
   outline-offset: .1px;/*Devido a borda não aparecer no safari*/
