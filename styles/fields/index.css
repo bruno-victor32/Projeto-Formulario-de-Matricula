@@ -54,5 +54,22 @@ input[type="date"] {
 
 select{
   background: url(../../assets/icons/arrow-down-01.svg) no-repeat calc(100% - 1rem);/*Vai recuar o ícone 16px, ou seja, 84px vai ter*/
-  
+}
+
+.address .flex{
+  gap: 1.25rem;
+}
+
+/*Vou pegar todos input-wrapper que tenha um disable dentro*/
+.input-wrapper:has([disabled]){
+  opacity: .5;
+}
+
+/*input que tenha um atributo "disabled" habilitado nele*/
+input{
+  &[disabled] {
+    background-color: var(--surface-disabled); /*Vai receber a seguinte cor*/
+    border: 1px solid var(--stroke-default);
+    color: var(--text-primary);
+  }
 }

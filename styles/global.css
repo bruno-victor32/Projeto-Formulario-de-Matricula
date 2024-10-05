@@ -56,3 +56,15 @@ img{
   max-width: 100%;
   height: auto;
 }
+
+.flex{
+  display: flex;
+}
+
+.flex-1{ /*Dessa forma estou deixando o campo (Rua, Número, Cidade, Estado) um do lado do outro*/
+  flex:1;
+}
+
+.flex-2{/*Dessa forma estou deixando o campo (Rua, Número, Cidade, Estado) um do lado do outro*/
+  flex:2;
+}
