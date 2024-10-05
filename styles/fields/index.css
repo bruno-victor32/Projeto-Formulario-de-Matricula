@@ -72,4 +72,35 @@ input{
     border: 1px solid var(--stroke-default);
     color: var(--text-primary);
   }
+
+  /*Quando o campo input estiver invalidado devido o required que colocamos*/
+  &:invalid{
+    border: 0.125rem solid var(--semantic-error);
+  }
+
+  /*Input que tenha o small como irmão*/
+  & + small{
+    font: var(--text-sm);
+    color: #78716C;
+
+    display: inline-block;
+    margin-top: 0.25rem;
+  }
+
+  /*Se meu input tiver um "required" e ao lado dele ter uma classe "error"*/
+  &[required] + .error{
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+
+    font: var(--text-sm);
+    color: var(--semantic-error);
+
+    margin-top: .25rem;
+  }
+
+  /*Se o input não estiver em focu e estiver "valid" e que tenha ao lado dele uma classe de nome "error"*/
+  &:not(:focus):valid + .error {
+    display: none; /*Quando ter um e-mail valido vai sumir a mensagem de erro, mas quando n for um e-mail valido vai continuar aparecendo a mensagem de e-mail invalido*/
+  }
 }
