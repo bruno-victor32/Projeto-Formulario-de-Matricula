@@ -39,7 +39,7 @@
   --text: 400 1rem/1.5 var(--font-family); /*Multiplicação de 1.5 o lineheight*/
   --text-sm: 400 0.875rem/1.4 var(--font-family);/*Texto minusculo*/
 
-  zoom: 60%;
+
 }
 
 body {
