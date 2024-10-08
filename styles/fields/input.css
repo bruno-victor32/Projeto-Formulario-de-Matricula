@@ -1,0 +1,104 @@
+/*Vamos manter uns padrões de campos. Fields significa campos*/
+
+input, textarea, select {
+  appearance: none;/*Vai retirar do select a seta*/
+  width: 100%;/*Largura*/
+  border-radius: .5rem;/*Arredondando a borda*/
+  border: 1px solid var(--stroke-default);
+  padding: .75rem 1rem; /*.75rem em cima e embaixo e 1rem nas laterais*/
+  font: var(--text);
+}
+
+label{
+  font: var(--text-sm);
+  color: var(--text-secondary);
+
+  display: block; /*Se não tivesse block seria inline, é iline não aceita margin-botton*/
+  margin-bottom: .25rem;
+}
+
+/*Todo o input, select que eu tocar nele vai ter uma cor diferente da cor padrão do navegador */
+input:focus,
+select:focus,
+textarea:focus,
+input[type="date"]:focus-within{ /*Se algum elemento do input "date" está em foco, então ele vai aplicar tudo isso*/
+  outline: .25rem solid var(--surface-secondary); 
+  border: .125rem solid var(--stroke-highlight); /*Terá uma borda vermelha os campos quando clicar*/
+  outline-offset: .1px;/*Devido a borda não aparecer no safari*/
+}
+
+/*Input que tenha o tipo date vai receber o que colocamos aqui*/
+input[type="date"] {
+  position: relative;
+  &::-webkit-calendar-picker-indicator{
+    opacity: 0;
+  }
+  
+  &::before{
+    /*Vou deixar escondido o simbolo de calendario antigo*/
+    content: "";/*Todo before precisa ter um content devido está criando um elemento html para c*/
+    position: absolute;
+    background: url(../../assets/icons/calendar-03.svg) center/contain;
+    right: 1rem;
+    width: 1.25rem; /*Largura*/
+    height: 1.25rem;/*Altura*/
+
+    /*Alinhando o ícone de outra maneira devido está sendo absoluto*/
+    top: 50%;
+    transform: translateY(-50%);/*Fazendo o movimento do eixo y*/
+
+  }
+}
+
+select{
+  background: url(../../assets/icons/arrow-down-01.svg) no-repeat calc(100% - 1rem);/*Vai recuar o ícone 16px, ou seja, 84px vai ter*/
+}
+
+.address .flex{
+  gap: 1.25rem;
+}
+
+/*Vou pegar todos input-wrapper que tenha um disable dentro*/
+.input-wrapper:has([disabled]){
+  opacity: .5;
+}
+
+/*input que tenha um atributo "disabled" habilitado nele*/
+input{
+  &[disabled] {
+    background-color: var(--surface-disabled); /*Vai receber a seguinte cor*/
+    border: 1px solid var(--stroke-default);
+    color: var(--text-primary);
+  }
+
+  /*Quando o campo input estiver invalidado devido o required que colocamos*/
+  &:invalid{
+    border: 0.125rem solid var(--semantic-error);
+  }
+
+  /*Input que tenha o small como irmão*/
+  & + small{
+    font: var(--text-sm);
+    color: #78716C;
+
+    display: inline-block;
+    margin-top: 0.25rem;
+  }
+
+  /*Se meu input tiver um "required" e ao lado dele ter uma classe "error"*/
+  &[required] + .error{
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+
+    font: var(--text-sm);
+    color: var(--semantic-error);
+
+    margin-top: .25rem;
+  }
+
+  /*Se o input não estiver em focu e estiver "valid" e que tenha ao lado dele uma classe de nome "error"*/
+  &:not(:focus):valid + .error {
+    display: none; /*Quando ter um e-mail valido vai sumir a mensagem de erro, mas quando n for um e-mail valido vai continuar aparecendo a mensagem de e-mail invalido*/
+  }
+}

@@ -1,0 +1,61 @@
+
+/*Label que tenha seguido dele um radio-wrapper*/
+label + .radio-wrapper{
+  margin-top: 1rem;
+}
+
+.radio-wrapper{ /*Configurando as disposições das caixas*/
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));/* para o auto-fit não importa quantas colunas tem, em seguida falo o tamanho minimo da coluna e em seguida o tamanho maximo.
+  Calculando o tamanho minimo é 120px de largura, transformando em "rem", ou seja, flexivel fica assim 120px / 16px = 7.5*/
+  gap: 1rem;
+}
+
+.radio-inner{
+  border: 1px solid var(--stroke-default);
+  border-radius: .5rem; /*Arredondando as bordas*/
+
+  display: grid;
+  justify-items: center;/*Alinhando ícone e imagem na vertical, ao centro*/
+  gap: .5rem; /*espaçamento entre o ícone e as palavras "manhã" ou "tarde"*/
+
+  padding: 2rem .5rem .5rem; /*em cima, nas laterais, embaixo*/
+
+  position: relative; /*Serve para dizer que fique dentro do "radio-inner"*/
+  & input,
+  & input:focus,
+  & input:hover { /*Estou retirando todas as informações do input, de quando o input estiver no focus e no hover também*/
+    all:unset;
+    position: absolute;/*Quero que o position fique em cima de todas as coisas*/
+    inset: 0;
+  }
+
+  .radio-image{
+    background-image: url(../../assets/icons/radio-default.svg);
+
+    width: 1.5rem;/*largura do ícone*/
+    height: 1.5rem;/*Altura do ícone*/
+
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+  }
+
+  /*Quando passar o mouse em cima da caixa radio-inner, ou se essa caixa radio-inner estiver selecionada/focada eu quero uma bordar maior e que sejá trocado o ícone para uma bolinha com borda laranja*/
+  &:hover, &:focus-within {
+    border: 1px solid var(--stroke-highlight);
+
+    & .radio-image{
+      background-image: url(../../assets/icons/radio-hover.svg);
+    }
+  }
+
+  /*Quando ter "has" a caixa "radio-inner" selecionada/checked, ou sejá, quando ela for clicada tera uma bordar maior e vai ser trocado o ícone para uma bolinha totalmente laranja, indicando que foi selecionado*/
+  &:has(:checked) {
+    border: 2px solid var(--stroke-highlight);
+
+    & .radio-image {
+      background-image: url(../../assets/icons/radio-checked.svg);
+    }
+  }
+}
