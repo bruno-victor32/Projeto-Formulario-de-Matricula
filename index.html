@@ -136,6 +136,30 @@
               </div>
             </div>
           </fieldset>
+
+          <fieldset class="enroll-options">
+            <legend>Opções de matrícula</legend>
+
+            <div class="input-wrapper">
+              <label>Selecione o turno de estudo</label>
+
+              <div class="radio-wrapper">
+                <div class="radio-inner"><!--Inner significa dentro-->
+                  <div class="radio-image"></div><!--Vai ser uma div vazia, para no css configurar o ícone de selecionado -->
+                  <input type="radio" name="study-shift" id="morning" value="morning"> <!--study-shift (turno de estudo)-->
+                  <img src="assets/icons/sun-cloud-02.svg" alt="Ícone do sol entre nuvens">
+                  <label for="morning">Manhã</label>
+                </div>
+
+                <div class="radio-inner"><!--Inner significa dentro-->
+                  <div class="radio-image"></div><!--Vai ser uma div vazia, para no css configurar o ícone de selecionado -->
+                  <input type="radio" name="study-shift" id="evening" value="evening"> <!--study-shift (turno de estudo)-->
+                  <img src="assets/icons/sun-02.svg" alt="Ícone do sol ">
+                  <label for="evening">Tarde</label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
         </form>
       </div>
     </main>
