@@ -1,0 +1,32 @@
+button{
+  all:unset; /*Retirar todas as configurações que os botões tiver*/
+  font-weight: 500; /*Peso de fonte de 500*/
+  color:var(--text-highlight);
+  padding: .75rem 1.5rem;/*Preenchimento nesse botão de .75rem de top e bottom e nas laterais 1.5rem*/
+  cursor:pointer;/*Quando colocar o mouse em cima vai ficar uma mão*/
+  border-radius: .5rem;
+
+  /*Button que tem a classe btn-primary, ou sejá e o com preenchimento em laranja */
+  &.btn-primary{
+    color: white;
+    background-color: var(--brand-dark);
+
+    /*Quando o Button estiver em foco/selecionado usando o teclado ou em hover*/
+    &:hover,
+    &:focus{
+      background-color: var(--brand-mid);
+    }
+  }
+  /*Button que tem a classe btn-primary, ou sejá e o com preenchimento em branco */
+  &.btn-secondary{
+    margin-left: auto;
+    border: 1px solid var(--text-highlight);
+
+    /*Quando o Button estiver em foco/selecionado usando o teclado ou em hover*/
+    &:hover,
+    &:focus{
+      color: var(--brand-dark);
+      outline: 0.25rem solid var(--surface-secondary);
+    }
+  }
+}
