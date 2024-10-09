@@ -4,7 +4,8 @@ input, textarea, select {
   appearance: none;/*Vai retirar do select a seta*/
   width: 100%;/*Largura*/
   border-radius: .5rem;/*Arredondando a borda*/
-  border: 1px solid var(--stroke-default);
+  border: 2px solid transparent;
+  outline: 1px solid var(--stroke-default);
   padding: .75rem 1rem; /*.75rem em cima e embaixo e 1rem nas laterais*/
   font: var(--text);
 }
@@ -23,7 +24,7 @@ select:focus,
 textarea:focus,
 input[type="date"]:focus-within{ /*Se algum elemento do input "date" está em foco, então ele vai aplicar tudo isso*/
   outline: .25rem solid var(--surface-secondary); 
-  border: .125rem solid var(--stroke-highlight); /*Terá uma borda vermelha os campos quando clicar*/
+  border-color:var(--stroke-highlight); /*Terá uma borda vermelha os campos quando clicar*/
   outline-offset: .1px;/*Devido a borda não aparecer no safari*/
 }
 

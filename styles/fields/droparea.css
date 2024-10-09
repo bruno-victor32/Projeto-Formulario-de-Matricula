@@ -1,6 +1,7 @@
 /*Arrumando aonde devemos fazer upload do arquivo*/
 .dropzone {
-  border: 1px dashed var(--stroke-default);
+  border: 2px dashed transparent;
+  outline: 1px dashed var(--stroke-default);
   border-radius: 0.25rem;
 
   display: grid;
@@ -24,7 +25,7 @@
 
   /*Quando passar o mouse em cima*/
   &:hover, &:has(input:focus){/*has vai verificar se meu input está em foco e se tiver vai aplicar*/
-    border-width: 2px;/*A bora irá aumentar */
+    outline-width:0;/*outline não vai ser mais utilizado*/
     border-color: var(--stroke-highlight); /*A borda vai mudar de cor */
     background-color: var(--surface-secondary);/*A cor de fundo vai mudar tbm*/
   
